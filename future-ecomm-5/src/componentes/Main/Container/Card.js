@@ -25,8 +25,8 @@ export function Card (props) {
     return (
         <MainCard>
            <Image src="https://picsum.photos/200/200" />
-           <p>Item x</p>
-           <p>R$50,90</p>
+           <p>{props.nomeDoProduto}</p>
+           <p>{props.valorDoProduto}</p>
            <ButtonAdicionar onClick={props.onClickAdicionarCarrinho}>
            <p>Adicionar ao carrinho</p>
            </ButtonAdicionar>

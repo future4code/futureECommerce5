@@ -10,11 +10,11 @@ const MainContainer = styled.div `
     padding: 20px;
 `
 
-export function Container() {
+export function Container(props) {
     return (
         <MainContainer>
             <HeaderContainer />
-            <CardContainer />
+            <CardContainer onClickAdicionarCarrinho={props.onClickAdicionarCarrinho} nomeDoProduto={props.nomeDoProduto} />
         </MainContainer>
     )
 }
