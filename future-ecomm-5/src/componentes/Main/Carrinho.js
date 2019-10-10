@@ -15,12 +15,13 @@ const Item = styled.div `
     align-items: center;
 `
 
-export function Cart() {
+export function Carrinho(props) {
+
     return (    
         <CartContainer>
             <h2>Carrinho:</h2>
             <Item>
-                <p>1x Item C - <b>X</b></p>
+                <p>1x C - <b>X</b></p>
             </Item>
             <Item>
                 <p>2x Item G - <b>X</b></p>

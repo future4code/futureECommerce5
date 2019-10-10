@@ -8,17 +8,10 @@ const MainCardConteiner = styled.div `
     grid-gap: 20px;
 `
 
-export function CardContainer() {
+export function CardContainer(props) {
     return (
         <MainCardConteiner>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Card onClickAdicionarCarrinho={props.onClickAdicionarCarrinho} nomeDoProduto={props.nomeDoProduto}  />
         </MainCardConteiner>
     )
 }
