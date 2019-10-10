@@ -5,8 +5,6 @@ import { Filtro } from './componentes/Main/Filtro';
 function App() {
   return (
     <div className="App">
-      <ShopCart />
-      <Filtro />
     </div>
   );
 }
