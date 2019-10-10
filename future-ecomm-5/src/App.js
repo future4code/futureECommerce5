@@ -10,12 +10,14 @@ const Body = styled.div`
 `
 
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       telaCart: false,
-      nomeDoProduto: []
+      produtos: ["Produto A", "Produto B", "Produto C", "Produto D", "Produto E", "Produto F", "Produto G", "Produto H"],
+      valores: [200.99, 500.99, 600.99, 600.99, 1000.99, 1500.99, 2000.99, 9999.99],
     }
   }
 
@@ -24,16 +26,19 @@ class App extends React.Component {
   }
 
   adicionarAoCarrinho = () => {
-    
+    // O que pensei a partir de agora:
+    // Criar um array no estado que armazene os nomes dos produtos a medida em que 
+    // o botão "adicionar ao carrinho" ir sendo clicado, e fazer com que esse array seja 
+    // reproduzido no carrinho. Quanto aos valores, criar um array de valores e fazer
+    // a sua soma. 
   }
+
+  
 
   render () {
     const telaAtual = this.state.telaCart ? (<Carrinho />) : (<div></div>)
-
-    const produtos = {
-      nome: ['teste1', 'teste2', 'teste3'],
-      valor: 50
-    }
+    const nomeDoProduto = this.state.produtos
+    const valorDoProduto = this.state.valores
     
     return (
     <div className="App">
@@ -42,7 +47,8 @@ class App extends React.Component {
           <Filtro />
           <Container
            onClickAdicionarCarrinho={this.adicionarAoCarrinho} 
-           nomeDoProduto={produtos.nome[1]}
+           nomeDoProduto={nomeDoProduto}
+           valorDoProduto={valorDoProduto}
           />
           {telaAtual}
         </Body>

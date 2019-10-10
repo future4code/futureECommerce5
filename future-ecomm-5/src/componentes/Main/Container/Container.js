@@ -14,7 +14,11 @@ export function Container(props) {
     return (
         <MainContainer>
             <HeaderContainer />
-            <CardContainer onClickAdicionarCarrinho={props.onClickAdicionarCarrinho} nomeDoProduto={props.nomeDoProduto} />
+            <CardContainer 
+                onClickAdicionarCarrinho={props.onClickAdicionarCarrinho} 
+                nomeDoProduto={props.nomeDoProduto}
+                valorDoProduto={props.valorDoProduto} 
+            />
         </MainContainer>
     )
 }
