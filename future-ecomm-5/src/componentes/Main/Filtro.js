@@ -4,16 +4,23 @@ import styled from 'styled-components';
 const FiltroContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
+    align-items: center;
+    width: 20vw;
+    border-right: 1px solid black;
 `
+
+const Inputs = styled.input`
+    margin: 20px;
+`
+
+
 export function Filtro(props) {
     return (
         <FiltroContainer>
-            <h3>Filtros</h3>
-            <input type="number" placeholder="Valor min" onChange={props.onChangeMinValue} />
-            <input type="number" placeholder="Valor max" onChange={props.onChangeMaxValue} />
-            <input type="text" placeholder="Pesquisa por nome" onChange={props.onChangeNameSearch} />
+            <h2>Filtros</h2>
+            <Inputs type="number" placeholder="Valor min" onChange={props.onChangeMinValue} />
+            <Inputs type="number" placeholder="Valor max" onChange={props.onChangeMaxValue} />
+            <Inputs type="text" placeholder="Pesquisa por nome" onChange={props.onChangeNameSearch} />
         </FiltroContainer>
     )
 }

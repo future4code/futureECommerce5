@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 
 const CartContainer = styled.div`
-    border-width: 1px;
+    box-sizing: border-box;
     border-style: solid;
+    border-width: 1px;
     width:100%;
     min-height: 20vh;
     display: flex;
