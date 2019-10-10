@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ShopCart } from './ShopCart';
 
 const HeaderContainer = styled.div `
     background-color: orange;
@@ -15,6 +16,7 @@ export function Header () {
         <HeaderContainer>
             <h1>E-Commerce5</h1>
             <p>Satélites para quem vive na Lua</p>
+            <ShopCart />
         </HeaderContainer>
     );
 }
