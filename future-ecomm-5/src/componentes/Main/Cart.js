@@ -3,13 +3,11 @@ import styled from 'styled-components';
 
 
 const CartContainer = styled.div`
-    box-sizing: border-box;
-    border-style: solid;
-    border-width: 1px;
-    width:100%;
-    min-height: 20vh;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    border-left: 1px solid black;
 `
 
 const Item = styled.div `
