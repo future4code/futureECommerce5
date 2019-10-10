@@ -11,12 +11,12 @@ const HeaderContainer = styled.div `
     justify-content: space-around; 
 `
 
-export function Header () {
+export function Header (props) {
     return (
         <HeaderContainer>
             <h1>E-Commerce5</h1>
             <p>Satélites para quem vive na Lua</p>
-            <ShopCart />
+            <ShopCart onClickShowCart={props.onClickShowCart} />
         </HeaderContainer>
     );
 }
