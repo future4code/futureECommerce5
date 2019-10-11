@@ -15,7 +15,6 @@ export function Header (props) {
     return (
         <HeaderContainer>
             <h1>E-Commerce5</h1>
-            <p>Satélites para quem vive na Lua</p>
             <ShopCart onClickShowCart={props.onClickShowCart} />
         </HeaderContainer>
     );
