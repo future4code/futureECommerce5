@@ -18,6 +18,9 @@ class App extends React.Component {
       telaCart: false,
       produtos: ["Produto A", "Produto B", "Produto C", "Produto D", "Produto E", "Produto F", "Produto G", "Produto H"],
       valores: [200.99, 500.99, 600.99, 600.99, 1000.99, 1500.99, 2000.99, 9999.99],
+      produtoAdicionado: '',
+      valorAdicionado: 0,
+      produtosNoCarrinho: [],
     }
   }
 

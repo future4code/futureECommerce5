@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const MainCard = styled.div`
     border: 1px solid black;
@@ -35,4 +36,8 @@ export function Card (props) {
            </ButtonAdicionar>
         </MainCard>
     )
+}
+
+Card.propTypes = {
+    onClickAdicionarCarrinho: PropTypes.func.isRequired,
 }

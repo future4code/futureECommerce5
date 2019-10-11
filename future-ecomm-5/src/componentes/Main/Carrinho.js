@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ProdutosNoCarrinho } from './ProdutosNoCarrinho';
 
 
 const CartContainer = styled.div`
@@ -15,18 +16,20 @@ const Item = styled.div `
     align-items: center;
 `
 
-export function Carrinho(props) {
+export class Carrinho extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            
+        }
+    }
 
-    return (    
-        <CartContainer>
-            <h2>Carrinho:</h2>
-            <Item>
-                <p>1x C - <b>X</b></p>
-            </Item>
-            <Item>
-                <p>2x Item G - <b>X</b></p>
-            </Item>
-            <h2>Total: R$ 1001.00</h2>
-        </CartContainer>
-    );
+    render(){
+        return (    
+            <CartContainer>
+                <h2>Carrinho:</h2>
+                <ProdutosNoCarrinho />
+            </CartContainer>
+        );
+    }
 }

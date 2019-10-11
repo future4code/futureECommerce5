@@ -10,15 +10,24 @@ const MainContainer = styled.div `
     padding: 20px;
 `
 
-export function Container(props) {
-    return (
-        <MainContainer>
-            <HeaderContainer />
-            <CardContainer 
-                onClickAdicionarCarrinho={props.onClickAdicionarCarrinho} 
-                nomeDoProduto={props.nomeDoProduto}
-                valorDoProduto={props.valorDoProduto} 
-            />
-        </MainContainer>
-    )
+export class Container extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            
+        }
+    }
+
+    render(){
+        return (
+            <MainContainer>
+                <HeaderContainer />
+                <CardContainer 
+                    onClickAdicionarCarrinho={this.props.onClickAdicionarCarrinho} 
+                    nomeDoProduto={this.props.nomeDoProduto}
+                    valorDoProduto={this.props.valorDoProduto} 
+                />
+            </MainContainer>
+        )
+    }
 }
