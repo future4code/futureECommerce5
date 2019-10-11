@@ -15,37 +15,12 @@ export class CardContainer extends React.Component {
         this.state = {
             produtoAdicionado: '',
             valorAdicionado: 0,
-            produtosNoCarrinho: ['teste'],
+            produtosNoCarrinho: [],
         }
-    }
-
-    adicionarAoCarrinho = (produtoDoCard, valorDoCard) => {
-        this.setState({
-            produtoAdicionado: produtoDoCard
-        })
-
-        this.setState({
-            valorAdicionado: valorDoCard
-        })
-
-        const nomeDoProduto = produtoDoCard;
-        const valorDoProduto = valorDoCard;
-
-        const valoresDoProduto = {
-            nome: nomeDoProduto,
-            valor: valorDoProduto
-        }
-
-        const arrayDosProdutos = [valoresDoProduto, ...this.state.produtosNoCarrinho];
-
-        this.setState({
-            produtosNoCarrinho: arrayDosProdutos,
-        })
-
-        console.log(this.state.produtosNoCarrinho);
     }
 
     render(){
+        
         return (
             <MainCardConteiner>
                 <Card 
