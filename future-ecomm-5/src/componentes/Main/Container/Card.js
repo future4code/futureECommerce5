@@ -23,17 +23,17 @@ const ButtonAdicionar = styled.div`
 `
 
 export function Card (props) {
-    const nomeDoProduto = props.nomeDoProduto
-    const valorDoProduto = props.valorDoProduto
+    const nomeDoProduto = props.nomeProduto
+    const valorDoProduto = props.valorProduto
     
     return (
         <MainCard>
-           <Image src="https://picsum.photos/200/200" />
-           <p>{nomeDoProduto}</p>
-           <p>{valorDoProduto}</p>
-           <ButtonAdicionar onClick={props.onClickAdicionarCarrinho}>
-           <p>Adicionar ao carrinho</p>
-           </ButtonAdicionar>
+            <Image src="https://picsum.photos/200/200" />
+            <p>{nomeDoProduto}</p>
+            <p>{valorDoProduto}</p>
+            <ButtonAdicionar onClick={props.onClickAdicionarCarrinho}>
+                <p>Adicionar ao carrinho</p>
+            </ButtonAdicionar>
         </MainCard>
     )
 }

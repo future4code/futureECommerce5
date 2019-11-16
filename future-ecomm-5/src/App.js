@@ -16,11 +16,40 @@ class App extends React.Component {
     super(props);
     this.state = {
       telaCart: false,
-      produtos: ["Produto A", "Produto B", "Produto C", "Produto D", "Produto E", "Produto F", "Produto G", "Produto H"],
-      valores: [200.99, 500.99, 600.99, 600.99, 1000.99, 1500.99, 2000.99, 9999.99],
-      produtoAdicionado: '',
-      valorAdicionado: 0,
-      produtosNoCarrinho: [],
+      produtos: [
+        {
+          nome: "Produto A",
+          valor: 200.99
+        },
+        {
+          nome: "Produto B",
+          valor: 200.99
+        },
+        {
+          nome: "Produto C",
+          valor: 200.99
+        },
+        {
+          nome: "Produto D",
+          valor: 200.99
+        },
+        {
+          nome: "Produto E",
+          valor: 200.99
+        },
+        {
+          nome: "Produto F",
+          valor: 200.99
+        },
+        {
+          nome: "Produto G",
+          valor: 200.99
+        },
+        {
+          nome: "Produto H",
+          valor: 200.99
+        },
+      ]
     }
   }
 
@@ -28,30 +57,19 @@ class App extends React.Component {
     this.setState ({telaCart: !this.state.telaCart})
   }
 
-  adicionarAoCarrinho = () => {
-    // O que pensei a partir de agora:
-    // Criar um array no estado que armazene os nomes dos produtos a medida em que 
-    // o botão "adicionar ao carrinho" ir sendo clicado, e fazer com que esse array seja 
-    // reproduzido no carrinho. Quanto aos valores, criar um array de valores e fazer
-    // a sua soma. 
-  }
-
-  
-
   render () {
     const telaAtual = this.state.telaCart ? (<Carrinho />) : (<div></div>)
-    const nomeDoProduto = this.state.produtos
-    const valorDoProduto = this.state.valores
-    
+
     return (
     <div className="App">
       <Header onClickShowCart={this.aparecerCart}/>
         <Body>
           <Filtro />
           <Container
-           onClickAdicionarCarrinho={this.adicionarAoCarrinho} 
-           nomeDoProduto={nomeDoProduto}
-           valorDoProduto={valorDoProduto}
+            // onClickAdicionarCarrinho={() => { 
+            //   this.adicionarAoCarrinho(this.nomeDoProduto, this.valorDoProduto)
+            // }} 
+            produtos={this.state.produtos}
           />
           {telaAtual}
         </Body>

@@ -18,16 +18,19 @@ export class Container extends React.Component {
         }
     }
 
-    render(){
-        return (
-            <MainContainer>
-                <HeaderContainer />
-                <CardContainer 
-                    onClickAdicionarCarrinho={this.props.onClickAdicionarCarrinho} 
-                    nomeDoProduto={this.props.nomeDoProduto}
-                    valorDoProduto={this.props.valorDoProduto} 
-                />
-            </MainContainer>
-        )
-    }
+render(){
+    return (
+        <MainContainer>
+            <HeaderContainer />
+            <CardContainer
+                produtos={this.props.produtos}
+                // onClickAdicionarCarrinho = {() => { 
+                //     this.props.adicionarAoCarrinho(this.props.nomeDoProduto, this.props.valorDoProduto)
+                // }}  
+                // onClickAdicionarCarrinho={this.props.onClickAdicionarCarrinho} 
+                
+            />
+        </MainContainer>
+    )
+}
 }

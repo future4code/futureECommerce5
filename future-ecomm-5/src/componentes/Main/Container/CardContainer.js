@@ -13,97 +13,37 @@ export class CardContainer extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            produtoAdicionado: '',
-            valorAdicionado: 0,
-            produtosNoCarrinho: ['teste'],
+            produtosNoCarrinho: [],
         }
     }
 
-    adicionarAoCarrinho = (produtoDoCard, valorDoCard) => {
-        this.setState({
-            produtoAdicionado: produtoDoCard
-        })
-
-        this.setState({
-            valorAdicionado: valorDoCard
-        })
-
-        const nomeDoProduto = produtoDoCard;
-        const valorDoProduto = valorDoCard;
-
-        const valoresDoProduto = {
-            nome: nomeDoProduto,
-            valor: valorDoProduto
+    adicionarAoCarrinho = (nomeProduto, valorProduto) => {
+        const produtoAdicionado = {
+            nome: nomeProduto,
+            valor: valorProduto
         }
 
-        const arrayDosProdutos = [valoresDoProduto, ...this.state.produtosNoCarrinho];
-
+        const produtosNoCarrinho = [produtoAdicionado, ...this.state.produtosNoCarrinho];
+        
         this.setState({
-            produtosNoCarrinho: arrayDosProdutos,
+            produtosNoCarrinho: produtosNoCarrinho,
         })
-
-        console.log(this.state.produtosNoCarrinho);
     }
+    
 
     render(){
+        console.log(this.state.produtosNoCarrinho)
         return (
             <MainCardConteiner>
-                <Card 
-                    onClickAdicionarCarrinho={() => { 
-                        this.adicionarAoCarrinho(this.props.nomeDoProduto[0] ,this.props.valorDoProduto[0])
+                {this.props.produtos.map(produto => {
+                return <Card 
+                    onClickAdicionarCarrinho={ () => { 
+                        this.adicionarAoCarrinho(produto.nome, produto.valor)
                     }} 
-                    nomeDoProduto={this.props.nomeDoProduto[0]}
-                    valorDoProduto={this.props.valorDoProduto[0]} 
+                    nomeProduto={produto.nome}
+                    valorProduto={produto.valor} 
                 />
-                <Card 
-                    onClickAdicionarCarrinho={() => { 
-                        this.adicionarAoCarrinho(this.props.nomeDoProduto[1] ,this.props.valorDoProduto[1])
-                    }}  
-                    nomeDoProduto={this.props.nomeDoProduto[1]}
-                    valorDoProduto={this.props.valorDoProduto[1]} 
-                />
-                <Card 
-                    onClickAdicionarCarrinho={() => { 
-                        this.adicionarAoCarrinho(this.props.nomeDoProduto[2] ,this.props.valorDoProduto[2])
-                    }}  
-                    nomeDoProduto={this.props.nomeDoProduto[2]}
-                    valorDoProduto={this.props.valorDoProduto[2]} 
-                />
-                <Card 
-                    onClickAdicionarCarrinho={() => { 
-                        this.adicionarAoCarrinho(this.props.nomeDoProduto[3] ,this.props.valorDoProduto[3])
-                    }}  
-                    nomeDoProduto={this.props.nomeDoProduto[3]}
-                    valorDoProduto={this.props.valorDoProduto[3]} 
-                />
-                <Card 
-                    onClickAdicionarCarrinho={() => { 
-                        this.adicionarAoCarrinho(this.props.nomeDoProduto[4] ,this.props.valorDoProduto[4])
-                    }}  
-                    nomeDoProduto={this.props.nomeDoProduto[4]}
-                    valorDoProduto={this.props.valorDoProduto[4]} 
-                />
-                <Card 
-                    onClickAdicionarCarrinho={() => { 
-                        this.adicionarAoCarrinho(this.props.nomeDoProduto[5] ,this.props.valorDoProduto[5])
-                    }}  
-                    nomeDoProduto={this.props.nomeDoProduto[5]}
-                    valorDoProduto={this.props.valorDoProduto[5]} 
-                />
-                <Card 
-                    onClickAdicionarCarrinho={() => { 
-                        this.adicionarAoCarrinho(this.props.nomeDoProduto[6] ,this.props.valorDoProduto[6])
-                    }}  
-                    nomeDoProduto={this.props.nomeDoProduto[6]}
-                    valorDoProduto={this.props.valorDoProduto[6]} 
-                />
-                <Card 
-                    onClickAdicionarCarrinho={() => { 
-                        this.adicionarAoCarrinho(this.props.nomeDoProduto[7] ,this.props.valorDoProduto[7])
-                    }}  
-                    nomeDoProduto={this.props.nomeDoProduto[7]}
-                    valorDoProduto={this.props.valorDoProduto[7]} 
-                />
+                })}
             </MainCardConteiner>
         )
     }
