@@ -14,23 +14,25 @@ export class Container extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            
+            produtoNome: "",
+            produtoValor: 0
         }
     }
 
-render(){
-    return (
-        <MainContainer>
-            <HeaderContainer />
-            <CardContainer
-                produtos={this.props.produtos}
-                // onClickAdicionarCarrinho = {() => { 
-                //     this.props.adicionarAoCarrinho(this.props.nomeDoProduto, this.props.valorDoProduto)
-                // }}  
-                // onClickAdicionarCarrinho={this.props.onClickAdicionarCarrinho} 
-                
-            />
-        </MainContainer>
-    )
-}
+    adicionarProdutoAoCarrinho = (nome, valor) => {
+        this.setState({produtoNome: nome, produtoValor: valor})
+        console.log(this.state.produtoValor, this.state.produtoNome)
+    }
+
+    render(){
+        return (
+            <MainContainer>
+                <HeaderContainer />
+                <CardContainer
+                    produtos={this.props.produtos}
+                    adicionarProdutoAoCarrinho={this.adicionarProdutoAoCarrinho}
+                />
+            </MainContainer>
+        )
+    }
 }
