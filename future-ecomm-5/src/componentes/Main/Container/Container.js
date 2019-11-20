@@ -14,14 +14,12 @@ export class Container extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            produtoNome: "",
-            produtoValor: 0
+
         }
     }
 
     adicionarProdutoAoCarrinho = (nome, valor) => {
-        this.setState({produtoNome: nome, produtoValor: valor})
-        console.log(this.state.produtoValor, this.state.produtoNome)
+        this.props.adicionarProdutoAoCarrinho(nome, valor)
     }
 
     render(){

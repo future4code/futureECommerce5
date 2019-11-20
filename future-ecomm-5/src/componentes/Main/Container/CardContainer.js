@@ -13,24 +13,13 @@ export class CardContainer extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            produtosNoCarrinho: [],
+
         }
     }
 
-    adicionarAoCarrinho = (nomeProduto, valorProduto) => {
-        const produtoAdicionado = {
-            nome: nomeProduto,
-            valor: valorProduto
-        }
-        const produtosNoCarrinho = [produtoAdicionado, ...this.state.produtosNoCarrinho];
-        
-        this.setState({
-            produtosNoCarrinho: produtosNoCarrinho,
-        })
-
-        this.props.adicionarProdutoAoCarrinho(this.state.produtosNoCarrinho.nome, this.state.produtosNoCarrinho.valor)
+    adicionarAoCarrinho = (nome, valor) => {
+        this.props.adicionarProdutoAoCarrinho(nome, valor)
     }
-    
 
     render () {
         return (

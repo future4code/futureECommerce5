@@ -9,8 +9,6 @@ const Body = styled.div`
   display: flex;
 `
 
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -49,7 +47,9 @@ class App extends React.Component {
           nome: "Produto H",
           valor: 200.99
         },
-      ]
+      ],
+      nomeProdutoNoCarrinho: "",
+      valorProdutoNoCarrinho: 0,
     }
   }
 
@@ -57,18 +57,22 @@ class App extends React.Component {
     this.setState ({telaCart: !this.state.telaCart})
   }
 
+  adicionarProdutoAoCarrinho = (nome, valor) => {
+    this.setState({nomeProdutoNoCarrinho: nome})
+    this.setState({valorProdutoNoCarrinho: valor})
+
+}
+
   render () {
     const telaAtual = this.state.telaCart ? (<Carrinho />) : (<div></div>)
-
+    console.log(this.state.nomeProdutoNoCarrinho, this.state.valorProdutoNoCarrinho)
     return (
     <div className="App">
       <Header onClickShowCart={this.aparecerCart}/>
         <Body>
           <Filtro />
           <Container
-            // onClickAdicionarCarrinho={() => { 
-            //   this.adicionarAoCarrinho(this.nomeDoProduto, this.valorDoProduto)
-            // }} 
+            adicionarProdutoAoCarrinho={this.adicionarProdutoAoCarrinho}
             produtos={this.state.produtos}
           />
           {telaAtual}
