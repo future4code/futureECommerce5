@@ -57,15 +57,18 @@ class App extends React.Component {
   }
 
   adicionarProdutoAoCarrinho = (nome, valor) => {
-    this.setState({produtosNoCarrinho: {...this.state.produtosNoCarrinho, nome, valor}})
+    const novoProduto = {
+      nome, 
+      valor
+    }
+    const copiaProdutosNoCarrinho = [novoProduto, ...this.state.produtosNoCarrinho]
+    this.setState({produtosNoCarrinho: copiaProdutosNoCarrinho})
   }
 
   render () {
-    console.log(this.state.produtosNoCarrinho)
     const telaAtual = this.state.telaCart ? (
       <Carrinho 
-        produto={this.state.nomeProdutoNoCarrinho}
-        valor={this.state.valorProdutoNoCarrinho}
+        produtosNoCarrinho={this.state.produtosNoCarrinho}
       />
     ) : (<div></div>)
     
