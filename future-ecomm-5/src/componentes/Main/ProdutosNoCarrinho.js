@@ -13,9 +13,9 @@ export function ProdutosNoCarrinho(props){
                 <p>Teste<b>X</b></p>
             </Item>
             <Item>
-                <p>2x Item G - <b>X</b></p>
+                <p>{props.produto}<b>X</b></p>
             </Item>
-            <h2>Total: R$ 1001.00</h2>
+            <h2>Total: R$ {props.valor}</h2>
         </div>
     )
 }

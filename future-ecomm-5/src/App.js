@@ -48,8 +48,7 @@ class App extends React.Component {
           valor: 200.99
         },
       ],
-      nomeProdutoNoCarrinho: "",
-      valorProdutoNoCarrinho: 0,
+      produtosNoCarrinho: [],
     }
   }
 
@@ -58,14 +57,18 @@ class App extends React.Component {
   }
 
   adicionarProdutoAoCarrinho = (nome, valor) => {
-    this.setState({nomeProdutoNoCarrinho: nome})
-    this.setState({valorProdutoNoCarrinho: valor})
-
-}
+    this.setState({produtosNoCarrinho: {...this.state.produtosNoCarrinho, nome, valor}})
+  }
 
   render () {
-    const telaAtual = this.state.telaCart ? (<Carrinho />) : (<div></div>)
-    console.log(this.state.nomeProdutoNoCarrinho, this.state.valorProdutoNoCarrinho)
+    console.log(this.state.produtosNoCarrinho)
+    const telaAtual = this.state.telaCart ? (
+      <Carrinho 
+        produto={this.state.nomeProdutoNoCarrinho}
+        valor={this.state.valorProdutoNoCarrinho}
+      />
+    ) : (<div></div>)
+    
     return (
     <div className="App">
       <Header onClickShowCart={this.aparecerCart}/>

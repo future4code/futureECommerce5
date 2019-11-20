@@ -28,7 +28,10 @@ export class Carrinho extends React.Component {
         return (    
             <CartContainer>
                 <h2>Carrinho:</h2>
-                <ProdutosNoCarrinho />
+                <ProdutosNoCarrinho 
+                    produto={this.props.produto}
+                    valor={this.props.valor}
+                />
             </CartContainer>
         );
     }
